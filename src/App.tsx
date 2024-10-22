@@ -45,7 +45,15 @@ function App() {
     const result = document.getElementById("result")!;
 
     result.innerHTML = `
-        <span style="color: blue;">summon minecraft:armor_stand</span><span style="color: green;">${coords}</span><span style="color: orange;">{</span><span style="color: purple;">Tags:[</span><span style="color: red;">${tag}</span><span style="color: purple;">],</span><span style="color: orange;"> CustomName:</span><span style="color: green;">'{"text": "</span><span style="color: red;">${text}</span><span style="color: green;">", "color": "</span><span style="color: ${color};">${color}</span><span style="color: green;">", "bold": </span><span style="color: blue;">${isBold}</span><span style="color: orange;">}', CustomNameVisible: 1b, Marker: 1b, Invisible: 1b, NoGravity: 1b}</span>
+        <span style="color: blue;">summon minecraft:armor_stand</span>
+        <span style="color: green;">${coords}</span>
+        <span style="color: orange;">{</span>
+        <span style="color: purple;">Tags:[</span><span style="color: red;">${tag}</span><span style="color: purple;">],</span>
+        <span style="color: orange;"> CustomName:</span>
+        <span style="color: green;">'{"text": "</span><span style="color: red;">${text}</span><span style="color: green;">", "color": "</span><span style="color: ${color};">${color}</span>
+        <span style="color: green;">", "bold": </span>
+        <span style="color: blue;">${isBold}</span>
+        <span style="color: orange;">}', CustomNameVisible: 1b, Marker: 1b, Invisible: 1b, NoGravity: 1b}</span>
       `;
     setShowResult(true);
   };
