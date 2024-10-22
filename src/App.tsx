@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [showResult, setShowResult] = useState(false);
   function updateColor(event: React.ChangeEvent<HTMLSelectElement>) {
     const color =
       event.target.options[event.target.selectedIndex].getAttribute(
@@ -25,10 +27,9 @@ function App() {
 
     const coords = "~ ~ ~";
 
-    const result = document.getElementById("result");
+    const result = document.getElementById("result")!;
 
-    if (result) {
-      result.innerHTML = `
+    result.innerHTML = `
         <span style="color: blue;">summon minecraft:armor_stand</span>
         <span style="color: green;">${coords}</span>
         <span style="color: orange;">{</span>
@@ -44,7 +45,7 @@ function App() {
         <span style="color: blue;">${isBold}</span>
         <span style="color: orange;">}', CustomNameVisible: 1b, Marker: 1b, Invisible: 1b, NoGravity: 1b}</span>
       `;
-    }
+    setShowResult(true);
   };
 
   return (
@@ -115,7 +116,8 @@ function App() {
           <input type="checkbox" id="bold" />
           <button>Enviar</button>
         </form>
-        <div>
+
+        <div id="divResult" className={!showResult ? "ocultar" : ""}>
           <h1>Resultado</h1>
           <div className="result">
             <span id="result"></span>
