@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [showResult, setShowResult] = useState(false);
+
   function updateColor(event: React.ChangeEvent<HTMLSelectElement>) {
     const color =
       event.target.options[event.target.selectedIndex].getAttribute(
@@ -15,6 +16,20 @@ function App() {
       }
     }
   }
+
+  const copyToClipboard = () => {
+    const resultText = document.getElementById("result")?.innerText;
+    if (resultText) {
+      navigator.clipboard.writeText(resultText).then(
+        () => {
+          alert("Texto copiado al portapapeles");
+        },
+        () => {
+          alert("Error al copiar el texto");
+        }
+      );
+    }
+  };
 
   const handSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -120,7 +135,12 @@ function App() {
         <div id="divResult" className={!showResult ? "ocultar" : ""}>
           <h1>Resultado</h1>
           <div className="result">
-            <span id="result"></span>
+            <span
+              id="result"
+              onClick={copyToClipboard}
+              style={{ cursor: "pointer" }}>
+              {/* Este es el contenedor donde se genera el mensaje */}
+            </span>
           </div>
         </div>
       </section>

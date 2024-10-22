@@ -54,10 +54,14 @@ form {
   background-color: black;
 }
 
-#result {
-  margin-top: 10px;
+.result {
   font-size: 20px;
   max-width: 60%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: rgb(44, 32, 32);
+  padding: 10px;
+  border: 1px solid #000; 
 }
 .ocultar {
   display: none;
