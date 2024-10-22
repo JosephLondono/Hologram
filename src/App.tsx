@@ -27,8 +27,6 @@ function App() {
 
     const result = document.getElementById("result");
 
-    const message = `summon minecraft:armor_stand ${coords} {Tags:[${tag}], CustomName:'{"text": "${text}", "color" : "${color}", "bold" : ${isBold}}', CustomNameVisible: 1b, Marker: 1b, Invisible: 1b, NoGravity: 1b}`;
-
     if (result) {
       result.innerHTML = `
         <span style="color: blue;">summon minecraft:armor_stand</span>
